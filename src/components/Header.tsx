@@ -35,13 +35,13 @@ const Header = ({ activeItem }: Props) => {
   return (
     <div
       className={` min-h-[60px] w-full border-b border-b-[#ffffff32] p-5 transition-opacity ${
-        active && 'top-o fixed left-0 z-[99] bg-[#000000]'
+        active && 'top-o fixed left-0 z-[99] bg-[#000]'
       }`}
     >
       <div className="mx-auto hidden items-center justify-between md:flex md:w-[100%] xl:w-[90%]">
         <div>
           <Link href={'/'}>
-            <h1 className=" font-Inter cursor-pointer text-3xl">
+            <h1 className=" cursor-pointer font-Inter text-3xl">
               <span className="text-[#64ff4C]">Bec</span>odemy
             </h1>
           </Link>
@@ -62,7 +62,7 @@ const Header = ({ activeItem }: Props) => {
       <div className="flex w-full items-center justify-between md:hidden">
         <div className="">
           <Link href="/">
-            <h1 className=" font-Inter cursor-pointer text-3xl">
+            <h1 className=" cursor-pointer font-Inter text-3xl">
               <span className="text-[#64ff4C]">Bec</span>odemy
             </h1>
           </Link>
