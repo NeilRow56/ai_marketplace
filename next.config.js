@@ -28,7 +28,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'pixmer.net',
+        hostname: 'pixner.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
       },
     ],
   },
