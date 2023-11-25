@@ -1,9 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import React from 'react'
 import Marquee from 'react-fast-marquee'
-import line from '../../../public/line.png'
+
+import { Image } from '@nextui-org/react'
 
 type Props = {}
 
@@ -54,15 +54,14 @@ const Hero = (props: Props) => {
         </h1>
         <div className="md:mt-5">
           <Image
+            src="../../../line.png"
+            alt=""
             className="absolute hidden md:block"
             width={2000}
             height={2}
-            src={line}
-            alt="line"
-            priority
           />
         </div>
-        <div className="relative mb-5 w-[100vw] md:mb-20">
+        <div className="relative mb-5 flex w-full md:mb-20">
           <div className="mt-10 rotate-[-4deg] md:mt-[6.5rem]">
             <Marquee>
               {rowOneImages.map((i, index) => (

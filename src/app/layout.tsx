@@ -6,7 +6,7 @@ import { Providers } from './(providers)/providers'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-monserrat',
+  variable: '--font-montserrat',
 })
 
 export const metadata: Metadata = {

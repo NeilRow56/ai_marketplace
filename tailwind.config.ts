@@ -12,8 +12,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        Inter: ['var(--font-inter)'],
-        Montserrat: ['var(--font-montserrat)'],
+        inter: ['var(--font-inter)'],
+        montserrat: ['var(--font-montserrat)'],
       },
     },
   },
