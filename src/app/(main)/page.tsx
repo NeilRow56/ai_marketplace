@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import PromptCard from '@/components/prompts/PromptCard'
 import About from '@/components/route/About'
+import Future from '@/components/route/Future'
 import Hero from '@/components/route/Hero'
 import BestSellers from '@/components/shop/BestSellers'
 import { styles } from '@/utils/styles'
@@ -39,6 +40,7 @@ export default function Home() {
           </div>
           <br />
           <BestSellers />
+          <Future />
         </div>
       </div>
     </div>
