@@ -1,10 +1,14 @@
-import Header from '@/components/Header'
+import Header from '@/components/nav/Header'
+import Footer from '@/components/nav/Footer'
 import PromptCard from '@/components/prompts/PromptCard'
 import About from '@/components/route/About'
 import Future from '@/components/route/Future'
 import Hero from '@/components/route/Hero'
+import Partners from '@/components/route/Partners'
 import BestSellers from '@/components/shop/BestSellers'
+import SellersBanner from '@/components/shop/SellersBanner'
 import { styles } from '@/utils/styles'
+import { Divider } from '@nextui-org/react'
 import Image from 'next/image'
 
 export default function Home() {
@@ -41,6 +45,12 @@ export default function Home() {
           <br />
           <BestSellers />
           <Future />
+          <Partners />
+          <SellersBanner />
+          <br />
+          <br />
+          <Divider />
+          <Footer />
         </div>
       </div>
     </div>

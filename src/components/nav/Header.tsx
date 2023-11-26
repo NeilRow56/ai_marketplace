@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import { FaBars } from 'react-icons/fa'
-import Navigation from './nav/Navigation'
+import Navigation from './Navigation'
 
 type Props = {
   activeItem: number
@@ -41,7 +41,7 @@ const Header = ({ activeItem }: Props) => {
       <div className="mx-auto hidden items-center justify-between md:flex md:w-[100%] xl:w-[90%]">
         <div>
           <Link href={'/'}>
-            <h1 className=" cursor-pointer font-Inter text-3xl">
+            <h1 className=" font-Inter cursor-pointer text-3xl">
               <span className="text-[#64ff4C]">Bec</span>odemy
             </h1>
           </Link>
@@ -62,7 +62,7 @@ const Header = ({ activeItem }: Props) => {
       <div className="flex w-full items-center justify-between md:hidden">
         <div className="">
           <Link href="/">
-            <h1 className=" cursor-pointer font-Inter text-3xl">
+            <h1 className=" font-Inter cursor-pointer text-3xl">
               <span className="text-[#64ff4C]">Bec</span>odemy
             </h1>
           </Link>
