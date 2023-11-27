@@ -3,10 +3,12 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { useUser } from '@clerk/nextjs'
+import { CgProfile } from 'react-icons/cg'
+import { UserProfile, useUser } from '@clerk/nextjs'
 import { FaBars } from 'react-icons/fa'
 import Navigation from './Navigation'
-import { UserButton } from '@clerk/nextjs'
+
+import { RxCross1 } from 'react-icons/rx'
 import DropDown from './Dropdown'
 
 type Props = {
@@ -83,14 +85,26 @@ const Header = ({ activeItem, isSellerExist }: Props) => {
                     />
                   </div>
                 ) : (
-                  <Link href="/sign-in">Sign In</Link>
+                  <Link href="/sign-in">
+                    <CgProfile className="cursor-pointer text-[25px]" />
+                  </Link>
                 )}
               </div>
             </>
           )}
         </div>
         {/* To do */}
-
+        {activeProfile && (
+          <div className="fixed left-0 top-0 z-[9999] flex h-screen w-full items-center justify-center overflow-hidden bg-[#00000068]">
+            <div className="relative h-[90vh] w-min overflow-y-scroll rounded-xl bg-white shadow">
+              <UserProfile />
+              <RxCross1
+                className="absolute right-10 top-10 cursor-pointer text-2xl text-black"
+                onClick={handleProfile}
+              />
+            </div>
+          </div>
+        )}
         {/* For mobile screen */}
         <div className="flex w-full items-center justify-between md:hidden">
           <div className="">
