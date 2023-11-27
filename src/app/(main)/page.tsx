@@ -10,8 +10,21 @@ import SellersBanner from '@/components/shop/SellersBanner'
 import { styles } from '@/utils/styles'
 import { Divider } from '@nextui-org/react'
 import Image from 'next/image'
+import { auth } from '@clerk/nextjs'
+import { redirect } from 'next/navigation'
 
-export default function Home() {
+export default async function Home() {
+  // Get the userId from auth() -- if null, the user is not logged in
+  const { userId } = auth()
+
+  if (userId) {
+    // Query DB for user specific information or display assets only to logged in users
+    redirect('/dashboard')
+  }
+
+  // Get the User object when you need access to the user's information
+
+  // Use `user` to render user details or create UI elements
   return (
     <div className="">
       <div className="banner">

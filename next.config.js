@@ -2,6 +2,7 @@
 const nextConfig = {
   experimental: {
     serverActions: true,
+    optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if

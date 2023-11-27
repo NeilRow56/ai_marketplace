@@ -26,6 +26,10 @@ const navItems = [
     title: 'Policy',
     href: '/policy',
   },
+  {
+    title: 'Dashboard',
+    href: '/dashboard',
+  },
 ]
 
 const Navigation = ({ activeItem }: Props) => {
