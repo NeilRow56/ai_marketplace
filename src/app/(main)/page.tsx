@@ -28,7 +28,7 @@ export default async function Home() {
   return (
     <div className="">
       <div className="banner">
-        <Header activeItem={0} />
+        <Header activeItem={0} isSellerExist />
         <Hero />
       </div>
       <Image

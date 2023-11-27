@@ -61,37 +61,26 @@ const Header = ({ activeItem, isSellerExist }: Props) => {
               </h1>
             </Link>
           </div>
-          {isLoaded && user && (
-            <>
-              <div className="flex">
-                <Navigation activeItem={activeItem} />
+          <div className="flex">
+            <Navigation activeItem={activeItem} />
+          </div>
+          <div className="ml-10 flex items-center">
+            <AiOutlineSearch className="mr-5 cursor-pointer text-[25px]" />
+            {user ? (
+              <div>
+                <DropDown
+                  setOpen={setOpen}
+                  handleProfile={handleProfile}
+                  isSellerExist={isSellerExist}
+                />
               </div>
-
-              <div className="xl:ml10 ml-6 flex items-center space-x-3">
-                <AiOutlineSearch className="mr-5 cursor-pointer text-[25px]" />
-                {/* To Do - Authentication */}
-
-                {/* <>
-                  <div className="text-white"> Hello {user.firstName}!</div>
-
-                  <UserButton afterSignOutUrl="/" />
-                </> */}
-                {user ? (
-                  <div>
-                    <DropDown
-                      setOpen={setOpen}
-                      handleProfile={handleProfile}
-                      isSellerExist={isSellerExist}
-                    />
-                  </div>
-                ) : (
-                  <Link href="/sign-in">
-                    <CgProfile className="cursor-pointer text-[25px]" />
-                  </Link>
-                )}
-              </div>
-            </>
-          )}
+            ) : (
+              <Link href="/sign-in" className="flex gap-2">
+                <CgProfile className="cursor-pointer text-[25px]" />
+                Sign In
+              </Link>
+            )}
+          </div>
         </div>
         {/* To do */}
         {activeProfile && (

@@ -1,6 +1,6 @@
 import { useClerk, useUser } from '@clerk/nextjs'
 import { styles } from '@/utils/styles'
-import { User } from '@clerk/nextjs/server'
+
 import React from 'react'
 import {
   Avatar,
@@ -26,9 +26,9 @@ const DropDown = ({ setOpen, handleProfile, isSellerExist }: Props) => {
   const router = useRouter()
   const handleLogOut = async () => {
     await signOut()
-    router.push('/sign-in')
+    router.push('/')
   }
-  const { isLoaded, user } = useUser()
+  const { user } = useUser()
   return (
     <Dropdown placeholder="bottom-start" className="bg-white">
       <DropdownTrigger>
@@ -40,6 +40,7 @@ const DropDown = ({ setOpen, handleProfile, isSellerExist }: Props) => {
       </DropdownTrigger>
       <DropdownMenu aria-label="Profile Actions" variant="flat">
         <DropdownItem
+          key="new"
           onClick={() => {
             handleProfile()
             setOpen(false)
@@ -56,7 +57,7 @@ const DropDown = ({ setOpen, handleProfile, isSellerExist }: Props) => {
             </span>
           </div>
         </DropdownItem>
-        <DropdownItem>
+        <DropdownItem key="copy">
           <Link href={'/my-orders'} className="flex w-full items-center">
             <GrDocumentStore className="ml-2 text-[22px] text-black" />
             <span className={`${styles.label} pl-2 text-[16px] text-black`}>
@@ -64,7 +65,7 @@ const DropDown = ({ setOpen, handleProfile, isSellerExist }: Props) => {
             </span>
           </Link>
         </DropdownItem>
-        <DropdownItem className={`${!isSellerExist && 'hidden'}`}>
+        <DropdownItem key="switch" className={`${!isSellerExist && 'hidden'}`}>
           <Link href={'/my-shop'} className="flex w-full items-center">
             <TbSwitchVertical className="ml-2 text-2xl text-black" />
             <span className={`${styles.label} pl-2 text-[16px] text-black`}>
@@ -72,7 +73,7 @@ const DropDown = ({ setOpen, handleProfile, isSellerExist }: Props) => {
             </span>
           </Link>
         </DropdownItem>
-        <DropdownItem onClick={handleLogOut}>
+        <DropdownItem key="logout" onClick={handleLogOut}>
           <div className="flex w-full items-center">
             <AiOutlineLogout className="ml-2 text-2xl text-black" />
             <span className={`${styles.label} pl-2 text-[16px] text-black`}>
